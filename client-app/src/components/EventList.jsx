@@ -16,7 +16,7 @@ export default function EventList(){
              <Grid container spacing={4}>
                 { datas.map((data, index) => {
                     let randomIndex = Math.floor(Math.random()*imagesList.length)
-                    let imageUrl = `../src/assets/${imagesList[randomIndex]}`
+                    let imageUrl = `assets/${imagesList[randomIndex]}`
                     data = {
                         ...data,
                         imageUrl: imageUrl
