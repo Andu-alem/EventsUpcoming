@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import dayjs from 'dayjs'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 
 
 export default function PostEvent() {
+    const navigate = useNavigate()
     const [dateTime, setDateTime] = useState(null)
     const [postAllowed, setPostAllowed] = useState(false)
     const [title, setTitle] = useState('')
@@ -105,7 +106,7 @@ export default function PostEvent() {
         }).then(res => {
             if(res.status === 200){
                 setModalOpen(false)
-                redirect("/events")            
+                navigate("/events")            
             }
         }).catch(error => {
             setModalOpen(false)
