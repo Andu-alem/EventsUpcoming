@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import dayjs from 'dayjs'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -104,7 +105,7 @@ export default function PostEvent() {
         }).then(res => {
             if(res.status === 200){
                 setModalOpen(false)
-                window.location = "/events"             
+                <Redirect to="/events" />            
             }
         }).catch(error => {
             setModalOpen(false)
