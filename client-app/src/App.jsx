@@ -8,7 +8,7 @@ import EventContext from './context'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import LoadingPage from './components/LoadingPage'
-import imagesList from '../imageAssets'
+import imagesList from './imageAssets'
 
 
 
