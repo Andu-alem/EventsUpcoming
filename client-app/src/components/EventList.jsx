@@ -4,7 +4,6 @@ import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Event from './Event'
 import EventContext from '../context'
-import imagesList from '../imageAssets'
 
 
 export default function EventList(){
@@ -15,12 +14,6 @@ export default function EventList(){
         <Box sx={{ width:'100%'}}>
              <Grid container spacing={4}>
                 { datas.map((data, index) => {
-                    let randomIndex = Math.floor(Math.random()*imagesList.length)
-                    let imageUrl = `assets/${imagesList[randomIndex]}`
-                    data = {
-                        ...data,
-                        imageUrl: imageUrl
-                    }
                     return (
                         <Grid 
                             key={index} 

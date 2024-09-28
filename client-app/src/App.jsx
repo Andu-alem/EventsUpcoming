@@ -8,6 +8,8 @@ import EventContext from './context'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import LoadingPage from './components/LoadingPage'
+import imagesList from '../imageAssets'
+
 
 
 function App() {
@@ -66,10 +68,15 @@ function App() {
     .then(res => {
         setDatas(() => {
           let data = res.data
-          return data.map((event) => ({
-            ...event,
-            addedToSchedule: false
-          }))
+          return data.map((event) => {
+            let randomIndex = Math.floor(Math.random()*imagesList.length)
+            let imageUrl = `assets/${imagesList[randomIndex]}`
+            return {
+              ...event,
+              imageUrl,
+              addedToSchedule: false
+            }
+          })
         })
         setLoadingFinished(true)
     })
